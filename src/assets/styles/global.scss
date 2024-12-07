@@ -1,0 +1,121 @@
+@import './reset';
+@import './variables';
+@import './mixins';
+
+*,
+*::before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font: 400 normal 18px/22px $body-font;
+  background-color: $white;
+  color: $black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading-font;
+}
+
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+
+  @include notebook {
+    padding: 0 26px 0 14px;
+  }
+}
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: absolute;
+  width: 30px;
+  height: 25px;
+  right: 26px;
+  top: 34px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  position: relative;
+  background: $turquoise;
+}
+
+/* Color/shape of burger icon bars on hover */
+.bm-burger-bars-hover {
+  transition: all 0.4s ease-in-out;
+  background: $turquoise-hover;
+  opacity: 1 !important;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  background-image: url('/burgerClose.svg');
+  right: 26px !important;
+  top: 42px !important;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: transparent;
+}
+
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: $turquoise;
+  padding: 0;
+  width: 100%;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* DatePicker CSS settings */
+.react-datepicker-wrapper:first-child {
+  margin-right: 20px;
+
+  @include tabletSmall {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+.react-datepicker__current-month {
+  font-family: $body-font;
+  text-transform: capitalize;
+}

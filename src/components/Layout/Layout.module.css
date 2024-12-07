@@ -1,0 +1,9 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+.layout > main {
+  flex-grow: 1;
+}

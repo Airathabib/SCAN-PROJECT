@@ -1,0 +1,82 @@
+@import '@/assets/styles/variables';
+@import '@/assets/styles/mixins';
+
+.benefitSlider {
+  margin-bottom: 50px;
+
+  @include mobile {
+    margin-bottom: 60px;
+  }
+
+  > .heading {
+    margin-bottom: 50px;
+    @include mainHeading;
+
+    @include mobile {
+      margin-bottom: 12px;
+    }
+  }
+
+  > .swiperWrapper {
+    position: relative;
+
+    > .swiper {
+      max-width: 1300px;
+      padding: 20px;
+
+      @include notebook {
+        max-width: calc(1280px + (100vw - 1360px));
+      }
+
+      .benefitCard {
+        display: flex;
+        flex-direction: column;
+        max-width: 400px;
+        height: 225px;
+        padding: 30px 20px;
+        border-radius: 10px;
+        box-shadow: $box-shadow;
+
+        @include notebook {
+          max-width: 100%;
+        }
+
+        @include mobileMedium {
+          height: auto;
+          padding: 20px 5px 20px 15px;
+        }
+
+        > .benefitImg {
+          width: 64px;
+          height: 64px;
+          margin-bottom: 27px;
+        }
+      }
+    }
+
+    > .navBtn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 39px;
+      height: 39px;
+      background: none;
+      border: none;
+      opacity: 0.2;
+      cursor: pointer;
+      z-index: 1;
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      &.btnPrev {
+        background-image: url('/arrowLeft.svg');
+        left: -9px;
+      }
+
+      &.btnNext {
+        background-image: url('/arrowRight.svg');
+        right: -9px;
+      }
+    }
+  }
+}
